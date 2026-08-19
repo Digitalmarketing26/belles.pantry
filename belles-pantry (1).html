@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belle's Pantry | Southern Culinary Items &amp; Gifts — Lafayette, LA</title>
+<meta name="description" content="Belle's Pantry crafts small-batch Southern preserves, pepper jellies, and curated gift baskets, shipped from Lafayette, Louisiana.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F4EFE2;
+    --cream-deep:#EAE2CD;
+    --ink:#2B2A20;
+    --cypress:#3E4A2E;
+    --cypress-deep:#2C3521;
+    --sage:#8B9A76;
+    --preserve:#8A3A2E;
+    --preserve-deep:#6E2C22;
+    --gold:#B98A3E;
+    --line: rgba(43,42,32,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Jost', sans-serif;
+    font-weight:400;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    letter-spacing:0.01em;
+    color:var(--cypress-deep);
+  }
+  .script{
+    font-family:'Sacramento', cursive;
+    font-weight:400;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 32px;}
+  @media (max-width:640px){ .wrap{padding:0 22px;} }
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:2px solid var(--gold); outline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(244,239,226,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+    transition:background .3s;
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 32px; max-width:1140px; margin:0 auto;
+  }
+  .brand{
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.5rem; font-weight:600; color:var(--cypress-deep);
+    display:flex; align-items:baseline; gap:6px;
+    letter-spacing:0.02em;
+  }
+  .brand span.script{ font-size:1.15em; color:var(--preserve); margin-left:2px;}
+  nav.links{display:flex; gap:34px; align-items:center;}
+  nav.links a{
+    font-size:0.86rem; letter-spacing:0.09em; text-transform:uppercase;
+    color:var(--cypress-deep); position:relative; padding-bottom:4px;
+  }
+  nav.links a::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:1px;
+    background:var(--preserve); transition:width .25s ease;
+  }
+  nav.links a:hover::after, nav.links a:focus-visible::after{width:100%;}
+  .nav-cta{
+    background:var(--preserve); color:var(--cream);
+    padding:10px 22px; border-radius:2px; font-size:0.82rem;
+    letter-spacing:0.08em; text-transform:uppercase; border:1px solid var(--preserve);
+    transition:background .25s, color .25s;
+  }
+  .nav-cta:hover{background:transparent; color:var(--preserve);}
+  .burger{display:none; background:none; border:none; cursor:pointer; padding:4px;}
+  .burger span{display:block; width:24px; height:2px; background:var(--cypress-deep); margin:5px 0;}
+
+  @media (max-width:860px){
+    nav.links{
+      position:fixed; top:64px; right:0; left:0; background:var(--cream);
+      flex-direction:column; align-items:flex-start; gap:0;
+      max-height:0; overflow:hidden; border-bottom:1px solid var(--line);
+      transition:max-height .35s ease;
+    }
+    nav.links.open{max-height:340px;}
+    nav.links a{padding:16px 32px; width:100%; border-top:1px solid var(--line);}
+    nav.links .nav-cta{margin:16px 32px; width:calc(100% - 64px); text-align:center;}
+    .burger{display:block;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative; padding:168px 0 110px; overflow:hidden;
+    background:
+      radial-gradient(ellipse at 15% 0%, rgba(139,154,118,0.18), transparent 55%),
+      var(--cream);
+  }
+  .hero .wrap{
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center;
+  }
+  .eyebrow{
+    font-size:0.78rem; letter-spacing:0.22em; text-transform:uppercase;
+    color:var(--preserve); margin-bottom:18px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:''; width:26px; height:1px; background:var(--preserve);}
+  .hero h1{
+    font-size:clamp(2.6rem, 5.4vw, 4.1rem); line-height:1.06; margin-bottom:22px;
+    font-weight:500;
+  }
+  .hero h1 em{font-style:italic; color:var(--preserve); font-weight:600;}
+  .hero p.lead{
+    font-size:1.12rem; max-width:480px; color:#4a4a3a; margin-bottom:34px;
+  }
+  .btn-row{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:15px 30px; font-size:0.85rem;
+    letter-spacing:0.09em; text-transform:uppercase; border-radius:2px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-solid{background:var(--cypress-deep); color:var(--cream); border:1px solid var(--cypress-deep);}
+  .btn-solid:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(44,53,33,0.25);}
+  .btn-outline{border:1px solid var(--cypress-deep); color:var(--cypress-deep);}
+  .btn-outline:hover{background:var(--cypress-deep); color:var(--cream);}
+
+  .hero-art{position:relative; height:440px;}
+  .hero-art svg{width:100%; height:100%;}
+
+  .stats-strip{
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    background:var(--cream-deep);
+  }
+  .stats-strip .wrap{
+    display:flex; justify-content:space-between; padding:34px 32px; flex-wrap:wrap; gap:24px;
+  }
+  .stat{text-align:left;}
+  .stat b{
+    display:block; font-family:'Cormorant Garamond', serif; font-size:2rem;
+    color:var(--preserve); font-weight:600;
+  }
+  .stat span{font-size:0.78rem; letter-spacing:0.06em; text-transform:uppercase; color:#5a5a48;}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:108px 0;}
+  .section-head{max-width:620px; margin-bottom:64px;}
+  .section-head .eyebrow{margin-bottom:14px;}
+  .section-head h2{font-size:clamp(2.1rem, 3.6vw, 2.9rem); font-weight:500;}
+  .section-head p{color:#4a4a3a; margin-top:16px; font-size:1.02rem;}
+  .divider{
+    display:flex; align-items:center; gap:14px; margin:0 0 20px;
+  }
+  .divider svg{flex-shrink:0;}
+
+  /* ---------- ABOUT ---------- */
+  #about{background:var(--cream);}
+  .about-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:70px; align-items:center;}
+  .about-art{position:relative;}
+  .about-art svg{width:100%; height:auto;}
+  .about-copy p{color:#43432f; margin-bottom:18px; font-size:1.02rem;}
+  .about-copy p:last-child{margin-bottom:0;}
+  .signature{
+    margin-top:30px; font-family:'Sacramento', cursive; font-size:2rem; color:var(--preserve);
+  }
+  .signature small{
+    display:block; font-family:'Jost', sans-serif; font-size:0.78rem; letter-spacing:0.08em;
+    text-transform:uppercase; color:#5a5a48; margin-top:4px;
+  }
+
+  @media (max-width:860px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero-art{order:-1; height:280px;}
+    .about-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- SERVICES ---------- */
+  #services{background:var(--cypress-deep); color:var(--cream);}
+  #services .section-head h2, #services .eyebrow{color:var(--cream);}
+  #services .eyebrow{color:#D8C79A;}
+  #services .eyebrow::before{background:#D8C79A;}
+  #services .section-head p{color:#C9CDB9;}
+  .service-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:1px;
+    background:rgba(244,239,226,0.14);
+    border:1px solid rgba(244,239,226,0.14);
+  }
+  .service-card{
+    background:var(--cypress-deep); padding:38px 30px; position:relative;
+    transition:background .3s ease;
+  }
+  .service-card:hover{background:#354028;}
+  .service-card .num{
+    font-family:'Cormorant Garamond', serif; font-size:0.85rem; color:#D8C79A;
+    letter-spacing:0.14em; margin-bottom:22px; display:block;
+  }
+  .service-card svg{margin-bottom:20px;}
+  .service-card h3{color:var(--cream); font-size:1.35rem; margin-bottom:10px; font-weight:500;}
+  .service-card p{color:#C9CDB9; font-size:0.94rem;}
+  @media (max-width:900px){ .service-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .service-grid{grid-template-columns:1fr;} }
+
+  /* ---------- PROCESS / WHY ---------- */
+  #why{background:var(--cream-deep);}
+  .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:44px;}
+  .why-item{border-top:2px solid var(--preserve); padding-top:22px;}
+  .why-item h3{font-size:1.3rem; margin-bottom:10px; font-weight:500;}
+  .why-item p{color:#4a4a3a; font-size:0.96rem;}
+  @media (max-width:760px){ .why-grid{grid-template-columns:1fr;} }
+
+  /* ---------- CONTACT ---------- */
+  #contact{background:var(--cream); position:relative;}
+  .contact-grid{
+    display:grid; grid-template-columns:0.95fr 1.05fr; gap:0;
+    border:1px solid var(--line); border-radius:3px; overflow:hidden;
+  }
+  .contact-info{
+    background:var(--cypress-deep); color:var(--cream); padding:56px 48px;
+  }
+  .contact-info h3{color:var(--cream); font-size:1.7rem; margin-bottom:18px; font-weight:500;}
+  .contact-info p{color:#C9CDB9; margin-bottom:34px; font-size:0.98rem;}
+  .info-row{
+    display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;
+    font-size:0.95rem; color:#EDE8D8;
+  }
+  .info-row svg{flex-shrink:0; margin-top:2px;}
+  .info-row b{display:block; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:#D8C79A; margin-bottom:3px;}
+  .contact-form{background:var(--cream); padding:56px 48px;}
+  .form-row{margin-bottom:22px;}
+  .form-row label{
+    display:block; font-size:0.76rem; letter-spacing:0.09em; text-transform:uppercase;
+    color:var(--cypress-deep); margin-bottom:8px;
+  }
+  .form-row input, .form-row select, .form-row textarea{
+    width:100%; border:none; border-bottom:1px solid var(--line);
+    background:transparent; padding:10px 2px; font-family:'Jost', sans-serif;
+    font-size:1rem; color:var(--ink); transition:border-color .2s;
+  }
+  .form-row input:focus, .form-row select:focus, .form-row textarea:focus{
+    border-bottom-color:var(--preserve); outline:none;
+  }
+  .form-row textarea{resize:vertical; min-height:96px;}
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .submit-btn{
+    background:var(--preserve); color:var(--cream); border:1px solid var(--preserve);
+    padding:15px 34px; font-size:0.85rem; letter-spacing:0.09em; text-transform:uppercase;
+    cursor:pointer; border-radius:2px; transition:background .25s,color .25s;
+  }
+  .submit-btn:hover{background:transparent; color:var(--preserve);}
+  .form-note{font-size:0.78rem; color:#7a7a68; margin-top:14px;}
+  @media (max-width:860px){
+    .contact-grid{grid-template-columns:1fr;}
+    .two-col{grid-template-columns:1fr;}
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--cypress-deep); color:#C9CDB9; padding:56px 0 30px;}
+  .footer-grid{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:36px;
+    padding-bottom:36px; border-bottom:1px solid rgba(244,239,226,0.14);
+  }
+  .footer-brand{font-family:'Cormorant Garamond', serif; font-size:1.5rem; color:var(--cream);}
+  .footer-brand span.script{color:#D8C79A; font-size:1.2em; margin-left:4px;}
+  .footer-links{display:flex; gap:60px; flex-wrap:wrap;}
+  .footer-col h4{
+    color:var(--cream); font-family:'Jost', sans-serif; font-weight:500; font-size:0.82rem;
+    letter-spacing:0.09em; text-transform:uppercase; margin-bottom:16px;
+  }
+  .footer-col a{display:block; color:#C9CDB9; font-size:0.92rem; margin-bottom:10px;}
+  .footer-col a:hover{color:var(--cream);}
+  .footer-bottom{
+    display:flex; justify-content:space-between; padding-top:26px; font-size:0.8rem;
+    color:#9AA187; flex-wrap:wrap; gap:10px;
+  }
+
+  /* fade-in on scroll */
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav wrap">
+    <a href="#home" class="brand">Belle's<span class="script">Pantry</span></a>
+    <nav class="links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#contact" class="nav-cta">Get In Touch</a>
+    </nav>
+    <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ================= HOME / HERO ================= -->
+<section id="home" class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Lafayette, Louisiana</p>
+      <h1>Small-batch Southern <em>pantry goods</em>, made for sharing.</h1>
+      <p class="lead">Belle's Pantry hand-crafts preserves, pepper jellies, and curated gift baskets rooted in Cajun and Creole tradition — packed with care and shipped across the bayou state and beyond.</p>
+      <div class="btn-row">
+        <a href="#services" class="btn btn-solid">Explore Our Goods</a>
+        <a href="#contact" class="btn btn-outline">Request a Gift Order</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 480 440" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="skyFade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#F4EFE2"/>
+            <stop offset="1" stop-color="#E8DFC4"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="480" height="300" fill="url(#skyFade)"/>
+        <rect x="0" y="300" width="480" height="140" fill="#DCD3B4"/>
+        <!-- reflection line -->
+        <line x1="0" y1="300" x2="480" y2="300" stroke="#8B9A76" stroke-width="1" opacity="0.4"/>
+        <!-- cypress tree left -->
+        <g opacity="0.9">
+          <path d="M70 300 C60 230 90 170 78 90 C110 150 96 210 100 300 Z" fill="#3E4A2E"/>
+          <path d="M78 90 C60 60 40 55 20 40 M78 90 C95 65 110 58 135 48 M78 90 C70 50 76 30 68 5 M78 90 C85 55 95 40 108 20" stroke="#4A5A38" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M20 40 C10 55 8 70 2 85 M135 48 C148 60 158 72 168 82 M68 5 C58 15 55 25 48 35" stroke="#8B9A76" stroke-width="2.5" fill="none" opacity="0.7" stroke-linecap="round"/>
+        </g>
+        <!-- cypress tree right, taller -->
+        <g opacity="0.95">
+          <path d="M380 320 C368 220 400 160 386 60 C425 130 410 210 415 320 Z" fill="#324027"/>
+          <path d="M386 60 C365 30 340 22 310 10 M386 60 C410 30 430 20 460 10 M386 60 C380 20 388 5 378 -18" stroke="#465533" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M310 10 C298 28 292 45 285 62 M460 10 C470 28 476 45 470 60" stroke="#93A17D" stroke-width="2.5" fill="none" opacity="0.7" stroke-linecap="round"/>
+        </g>
+        <!-- reflections -->
+        <g opacity="0.28" transform="translate(0,600) scale(1,-1)">
+          <path d="M70 300 C60 230 90 170 78 90 C110 150 96 210 100 300 Z" fill="#3E4A2E"/>
+          <path d="M380 320 C368 220 400 160 386 60 C425 130 410 210 415 320 Z" fill="#324027"/>
+        </g>
+        <!-- water texture lines -->
+        <line x1="0" y1="340" x2="480" y2="340" stroke="#C9BE97" stroke-width="1"/>
+        <line x1="0" y1="370" x2="480" y2="370" stroke="#C9BE97" stroke-width="1"/>
+        <line x1="0" y1="400" x2="480" y2="400" stroke="#C9BE97" stroke-width="1"/>
+        <!-- jar -->
+        <g transform="translate(198,250)">
+          <rect x="0" y="18" width="70" height="70" rx="6" fill="#8A3A2E" opacity="0.92"/>
+          <rect x="6" y="0" width="58" height="24" rx="4" fill="#B98A3E"/>
+          <rect x="0" y="18" width="70" height="70" rx="6" fill="none" stroke="#F4EFE2" stroke-width="1.5" opacity="0.5"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="stats-strip">
+  <div class="wrap">
+    <div class="stat"><b>100%</b><span>Small-batch made</span></div>
+    <div class="stat"><b>Lafayette</b><span>Louisiana, USA</span></div>
+    <div class="stat"><b>Gift-ready</b><span>Baskets &amp; boxes</span></div>
+    <div class="stat"><b>Ships</b><span>Nationwide</span></div>
+  </div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-art reveal" aria-hidden="true">
+      <svg viewBox="0 0 340 380" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="340" height="380" rx="4" fill="#EAE2CD"/>
+        <circle cx="170" cy="150" r="86" fill="#DCD3B4"/>
+        <!-- pralines / jars illustration -->
+        <ellipse cx="130" cy="180" rx="30" ry="16" fill="#B98A3E"/>
+        <ellipse cx="130" cy="174" rx="30" ry="16" fill="#C79A52"/>
+        <ellipse cx="185" cy="190" rx="26" ry="14" fill="#8A3A2E"/>
+        <ellipse cx="185" cy="184" rx="26" ry="14" fill="#9C4536"/>
+        <rect x="205" y="120" width="46" height="60" rx="6" fill="#3E4A2E"/>
+        <rect x="211" y="106" width="34" height="18" rx="3" fill="#2C3521"/>
+        <rect x="205" y="120" width="46" height="60" rx="6" fill="none" stroke="#F4EFE2" stroke-width="1.5" opacity="0.4"/>
+        <path d="M40 340 C70 300 100 300 120 330 C150 290 190 290 210 320 C250 280 290 300 310 340" stroke="#8B9A76" stroke-width="3" fill="none" opacity="0.6"/>
+        <text x="170" y="360" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-size="17" fill="#6E2C22">est. Lafayette, Louisiana</text>
+      </svg>
+    </div>
+    <div class="about-copy reveal">
+      <div class="eyebrow">About Us</div>
+      <h2>A pantry built on family recipes and bayou generosity</h2>
+      <p>Belle's Pantry started at a kitchen table in Lafayette, where recipes for pepper jelly, fig preserves, and pecan pralines had been passed down for three generations before ever touching a store shelf. We bottle that same spread of hospitality — the kind Louisiana is known for — and send it to porches and tables far outside Acadiana.</p>
+      <p>Every jar is stirred in small batches, labeled by hand, and packed the way we'd pack a gift for our own family. We work with local growers when the season allows, and we keep our ingredient lists short enough to read out loud.</p>
+      <p>Today Belle's Pantry serves home cooks building a gift basket, event planners sourcing Southern favors, and shops looking to stock something genuinely regional.</p>
+      <div class="signature">Belle
+        <small>Founder, Belle's Pantry</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Services</div>
+      <h2>What we make &amp; ship</h2>
+      <p>Four ways to bring Belle's Pantry to your table, your event, or your storefront.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <span class="num">01</span>
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><path d="M9 12h16v16a2 2 0 01-2 2H11a2 2 0 01-2-2V12z" stroke="#D8C79A" stroke-width="1.6"/><path d="M13 12V8a4 4 0 018 0v4" stroke="#D8C79A" stroke-width="1.6"/></svg>
+        <h3>Pantry Staples</h3>
+        <p>Pepper jellies, fig preserves, cane syrup, and spice blends made in small batches with short ingredient lists.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">02</span>
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><rect x="6" y="14" width="22" height="14" rx="2" stroke="#D8C79A" stroke-width="1.6"/><path d="M6 14l11-8 11 8" stroke="#D8C79A" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <h3>Curated Gift Baskets</h3>
+        <p>Ready-to-ship baskets built around a theme — Cajun brunch, hostess gift, holiday sampler — wrapped and card-ready.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">03</span>
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><path d="M17 4l4 8 9 1-6.5 6 1.5 9-8-4.5L8.5 28l1.5-9L3 12l9-1 5-8z" stroke="#D8C79A" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <h3>Custom Occasion Boxes</h3>
+        <p>Weddings, corporate thank-yous, and holiday client gifts, built to your budget with custom labels on request.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">04</span>
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><rect x="4" y="8" width="26" height="18" rx="2" stroke="#D8C79A" stroke-width="1.6"/><path d="M4 12h26" stroke="#D8C79A" stroke-width="1.6"/></svg>
+        <h3>Wholesale &amp; Retail Partners</h3>
+        <p>Case-pack pricing and shelf-ready labeling for boutiques, markets, and specialty grocers across the region.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY / VALUES ================= -->
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why Belle's Pantry</div>
+      <h2>What stays the same in every jar</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <h3>Small-batch, always</h3>
+        <p>We cap every batch so nothing sits on a shelf too long before it reaches you — flavor stays close to fresh from the pot.</p>
+      </div>
+      <div class="why-item reveal">
+        <h3>Ingredients you recognize</h3>
+        <p>No artificial preservatives or filler syrups. If a great-aunt wouldn't recognize it, it doesn't go in the jar.</p>
+      </div>
+      <div class="why-item reveal">
+        <h3>Packed like a gift</h3>
+        <p>Every order — one jar or a full basket — is wrapped and labeled the way we'd want to receive it ourselves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Contact Us</div>
+      <h2>Let's get a gift on its way</h2>
+      <p>Reach out for orders, wholesale inquiries, or custom gift box requests — we typically reply within one business day.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Belle's Pantry</h3>
+        <p>Southern culinary items and gifts, hand-packed in Acadiana.</p>
+        <div class="info-row">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 18s6-5.2 6-10a6 6 0 10-12 0c0 4.8 6 10 6 10z" stroke="#D8C79A" stroke-width="1.4"/><circle cx="10" cy="8" r="2.2" stroke="#D8C79A" stroke-width="1.4"/></svg>
+          <div><b>Location</b>Lafayette, Louisiana</div>
+        </div>
+        <div class="info-row">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="#D8C79A" stroke-width="1.4"/><path d="M2 5l8 6 8-6" stroke="#D8C79A" stroke-width="1.4"/></svg>
+          <div><b>Email</b>hello@bellespantry.com</div>
+        </div>
+        <div class="info-row">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 3h3l2 5-2 1a10 10 0 006 6l1-2 5 2v3a2 2 0 01-2 2C9 20 0 11 0 5a2 2 0 012-2z" stroke="#D8C79A" stroke-width="1.2"/></svg>
+          <div><b>Phone</b>(337) 555-0142</div>
+        </div>
+        <div class="info-row">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#D8C79A" stroke-width="1.4"/><path d="M10 5v5l3 2" stroke="#D8C79A" stroke-width="1.4"/></svg>
+          <div><b>Hours</b>Mon–Fri, 9am–5pm CT</div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form id="contactForm" onsubmit="return handleSubmit(event)">
+          <div class="two-col">
+            <div class="form-row">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="fname" required>
+            </div>
+            <div class="form-row">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lname" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-row">
+            <label for="reason">I'm Reaching Out About</label>
+            <select id="reason" name="reason">
+              <option>A gift order</option>
+              <option>Wholesale / retail partnership</option>
+              <option>Custom occasion box</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+          <p class="form-note" id="formNote">Clicking send opens WhatsApp with your details pre-filled, ready to send.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Belle's<span class="script">Pantry</span></div>
+        <p style="max-width:240px; margin-top:14px; font-size:0.9rem; color:#9AA187;">Southern culinary items and gifts, hand-packed in Lafayette, Louisiana.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Site</h4>
+          <a href="#home">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@bellespantry.com">hello@bellespantry.com</a>
+          <a href="tel:+13375550142">(337) 555-0142</a>
+          <a href="#contact">Lafayette, LA</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Belle's Pantry. All rights reserved.</span>
+      <span>Site crafted with Southern hospitality.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const burger = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+  }));
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // form handler — sends details to WhatsApp via click-to-chat link
+  const WHATSAPP_NUMBER = '19494542617'; // country code 1 (US) + 9494542617
+
+  function handleSubmit(e){
+    e.preventDefault();
+    const fname = document.getElementById('fname').value.trim();
+    const lname = document.getElementById('lname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const reason = document.getElementById('reason').value;
+    const message = document.getElementById('message').value.trim();
+
+    const text =
+      "New inquiry from Belle's Pantry website%0A" +
+      "———————————————%0A" +
+      "Name: " + encodeURIComponent(fname + ' ' + lname) + "%0A" +
+      "Email: " + encodeURIComponent(email) + "%0A" +
+      "Reason: " + encodeURIComponent(reason) + "%0A" +
+      "Message: " + encodeURIComponent(message);
+
+    const waUrl = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + text;
+
+    const note = document.getElementById('formNote');
+    note.textContent = "Opening WhatsApp with your message ready to send…";
+    note.style.color = '#3E4A2E';
+
+    window.open(waUrl, '_blank');
+    e.target.reset();
+    return false;
+  }
+</script>
+
+</body>
+</html>
